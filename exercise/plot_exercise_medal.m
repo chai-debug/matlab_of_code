@@ -1,0 +1,14 @@
+clc;clear;
+G=[46 38 29 24 13];
+S=[29 27 17 26 8];
+B=[29 23 19 32 7];
+h=bar([G',S',B']);
+% ch=get(h,'children');
+% set(ch{1},'faceColor',[0 0 0]);
+% set(ch{2},'faceColor',[1 1 1]);
+% set(ch{3},'faceColor',[255 255 255]);
+set(gca,'XTicklabel',{'USA', 'CHN', 'GBR', 'RUS', 'KCR'});
+title('Medal cout for top 5 countries in 2012');
+ylabel('Number of medals');
+xlabel('Country');
+legend('Gold','Silver','Bronze');

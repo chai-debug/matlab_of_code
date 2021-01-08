@@ -1,0 +1,10 @@
+[X Y Z]=sphere(64);
+h=surf(X,Y,Z);
+axis square vis3d off;
+colormap(summer);
+shading interp;
+lighting phong;
+set(h,'AmbientStrength',0.75,'DiffuseStrength',0.5);
+L1=light('Position',[-1,-1,-1]);
+% set(L1,'Position',[-1,-1,-1]);
+%  set(L1,'Color','g');

@@ -1,0 +1,11 @@
+clc;
+clear;
+colormap(lines);
+h=0.005
+x=-2:h:2;
+y=x.^3;
+m=diff(y)./diff(x);
+m2=diff(m)./diff(x(1:end-1));
+plot(x(1:end),y,x(1:end-1),m,x(1:end-2),m2);
+legend('f(x)','f¡¯(x)','f"(x)');
+set(gca,'XTick',-2:1:2);

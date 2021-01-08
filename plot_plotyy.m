@@ -1,0 +1,10 @@
+x=0:0.01:20;
+y1=200*exp(-0.05*x).*sin(x);
+y2=0.8*exp(-0.5*x).*sin(10*x);
+[Ax,H1,H2]=plotyy(x,y1,x,y2);
+set(get(Ax(1),'ylabel'),'String','Left Y-axis');
+set(get(Ax(2),'ylabel'),'String','Right Y-axis');
+title('Labeling plotyy');
+set(H1,'LineStyle','--');
+set(H2,'LineStyle',':');
+legend('200e^{-0.05x}sin(x)','0.8e^{-0.5x}sin(10x)');
