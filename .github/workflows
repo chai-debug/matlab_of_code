@@ -3,7 +3,7 @@ name: WeChat Push Notification
 on:
   push:
     branches:
-      - main
+      - develop
   pull_request:
     types: [opened, closed]
 
