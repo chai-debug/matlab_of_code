@@ -1,0 +1,26 @@
+name: WeChat Push Notification
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send WeChat Notification
+      env:
+        WECHAT_WEBHOOK: ${{ secrets.WECHAT_WEBHOOK }}
+      run: |
+        curl -X POST "${{ env.WECHAT_WEBHOOK }}" \
+        -H 'Content-Type: application/json' \
+        -d '{
+              "msgtype": "text",
+              "text": {
+                "content": "GitHub Actions Notification: Code has been pushed to main branch."
+              }
+            }'
